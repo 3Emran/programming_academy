@@ -25,7 +25,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Your custom apps here:
     'courses',
+    'blog',
+    'faq',
+    'testimonials',
+    'team',
+    'events',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +103,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'courses' / 'static',
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # this is for collectstatic
+
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
