@@ -26,6 +26,10 @@
         .hero-section p {
             font-size: 1.2rem;
         }
+        .p_lead {
+            margin: 10px 0px 0px 0px;
+
+        }
         .features, .about, .testimonials, .faq, .contact, .cta, .newsletter {
             background-color: #fff;
             padding: 40px 20px;
