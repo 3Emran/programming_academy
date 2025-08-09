@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>🧠 Adaptive Quiz</h2>
+
+  {% if questions %}
+    <form method="post">
+      {% csrf_token %}
+      {% for q in questions %}
+        <div class="question-block" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 10px;">
+          <p><strong>{{ forloop.counter }}. {{ q.question_text }}</strong></p>
+
+          {% if q.options %}
+            {% for key, val in q.options.items %}
+              <label style="display: block; margin-left: 20px;">
+                <input type="radio" name="q{{ q.id }}" value="{{ key }}">
+                {{ key }}. {{ val }}
+              </label>
+            {% endfor %}
+          {% else %}
+            <p style="color: red;">⚠️ No options available for this question.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px;">Submit</button>
+    </form>
+
+  {% else %}
+    <p style="color: red;">🚫 No quiz questions available.</p>
+  {% endif %}
+</div>
+{% endblock %}

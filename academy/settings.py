@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'testimonials',
     'team',
     'events',
+    'quiz',
 ]
 
 MIDDLEWARE = [
