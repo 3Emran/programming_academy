@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('course.urls')),  # or your homepage
+    path('', include('courses.urls')),  # or your homepage
     path('blog/', include('blog.urls')),
     path('quiz/', include('quiz.urls')),  # ✅ This must be here
 ]
